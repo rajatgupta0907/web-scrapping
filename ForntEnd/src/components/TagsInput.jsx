@@ -51,34 +51,7 @@ const TagsInput = () => {
 
   return (
     <div className="container">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        onKeyPress={handleInputKeyPress}
-        placeholder="Add tags..."
-        className="form-control mt-3"
-      />
-      <div className="tags-container">
-        {tags.map((tag, index) => (
-          <span key={index} className="tag">
-            {tag}
-            <BsTrash
-              className="trash-icon"
-              onClick={() => handleTagRemove(tag)}
-            />
-          </span>
-        ))}
-      </div>
-      <button className="btn btn-primary m-3" onClick={handleSubmit}>
-        {" "}
-        <BsTrash />
-        Submit
-      </button>
-      <button className="btn btn-primary m-3" onClick={() => setTags([])}>
-        {" "}
-        <BsTrash /> Clear
-      </button>
+      
       <hr />
       <DisplayData data={data} />
       <hr>
