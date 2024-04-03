@@ -36,6 +36,19 @@ const TagsInput = () => {
     setData(data.feedItems);
   };
 
+  const getUrlFromDatabase = async () => {
+    const res = await fetch("http://localhost:3333/fetchDataFromMySQL", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    console.log(data);
+    setData(data.feedItems);
+  };
+
   return (
     <div className="container">
       <input
@@ -68,6 +81,13 @@ const TagsInput = () => {
       </button>
       <hr />
       <DisplayData data={data} />
+      <hr>
+      </hr>
+      <button className="btn btn-primary m-3" onClick={getUrlFromDatabase}>
+        {" "}
+         Submit
+      </button>
+
     </div>
   );
 };

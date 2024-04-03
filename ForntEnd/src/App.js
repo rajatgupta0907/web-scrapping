@@ -3,7 +3,10 @@ import TagsInput from './components/TagsInput';
 
 function App() {
   return (
-    <TagsInput />
+    <>
+    <TagsInput >
+    </TagsInput>
+    </>
   );
 }
 
